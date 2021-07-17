@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/requestpage.css' %}" type="text/css">
+        <title>CU Student Complaint System</title>
+    </head>
+    <body class="body-login">
+
+            <div class="login-center-div">
+
+                <div>
+                    <p>CU Student Result Complaint System</p>
+                    <div class="form-login">
+                        <div class="svg-part">
+                            <img src="{% static 'img/CULOGO.png' %}">
+                        </div>
+                        <div class="form-part">
+                            {{error}}
+                            <form method="POST" action="{% url 'login' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input id="idno" name="idno" class="standard-textbox" type="text" placeholder="USERNAME" required>
+                                <input id="password" name="password" class="standard-textbox" type="password" placeholder="PASSWORD" required>
+                                <input class="big-button" type="submit" value="LOGIN" name="LOGIN">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+    </body>
